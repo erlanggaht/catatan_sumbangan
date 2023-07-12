@@ -5,7 +5,7 @@ import PasswordIcon from '@/assets/icon/PasswordIcon.vue'
 import InputComponent from '@/components/atoms/input.vue'
 import { useRouter } from 'vue-router';
 import registrasi_api from '@/API/registrasi.js'
-import Validasi_Register from '@/utility/Validasi_Register.js'
+import Validasi_Register from '@/Utility/Validasi_Register.js'
 import Alert_warning from '../components/atoms/alert_warning.vue';
 import Alert_success from '@/components/atoms/alert_success.vue';
 import audio_error from '@/assets/error.mp3'
