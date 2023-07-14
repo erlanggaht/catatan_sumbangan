@@ -9,7 +9,7 @@ import Alert_warning from '@/components/atoms/alert_warning.vue';
 import Alert_success from '@/components/atoms/alert_success.vue';
 import audio_error from '@/assets/error.mp3'
 import audio_success from '@/assets/success.mp3'
-
+import {setCookie} from 'nookies'
 const router = useRouter()
 
 const username = ref('')
@@ -42,6 +42,11 @@ function Submit() {
             alert.value = false
         }, 2700)
 
+    // setcook
+        setCookie(null,'lgn',res.user_lg,{
+            maxAge : 6000000,
+            path : "/"
+        })
        
         return false
     }).catch(err => {

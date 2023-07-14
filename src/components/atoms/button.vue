@@ -1,8 +1,9 @@
 <script setup>
+import AddIcon from '@/assets/icon/AddIcon.vue'
+
 
 const props = defineProps ({
     text : String,
-    icon : String,
     bg: String
 })
 
@@ -13,7 +14,7 @@ const class_btn = `btn ${props.bg}`
 <template>
 
     <button :className='class_btn'>
-        <props.icon/>
+        <AddIcon/>
         {{props.text}}
       </button>
 
