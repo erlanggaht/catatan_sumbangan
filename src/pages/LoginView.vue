@@ -84,7 +84,7 @@ document.title = 'Masuk'
     <main class="h-screen">
 
         <form
-            class="artboard md:w-1/2 bg-dark absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-xl shadow-xl  py-4">
+            class="artboard md:w-1/2 bg-dark absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-xl shadow-xl  py-4 dark:bg-[#242424] ">
             <h1 class="text-3xl text-center p-4 pb-0 m-0">Hello, Admin!</h1>
             <p class="text-center p-0 m-0 font-thin italice text-sm">masukan username dan password ya.</p>
 
@@ -93,7 +93,7 @@ document.title = 'Masuk'
                 <label for="username" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Username</label>
                 <div class="flex">
                     <span
-                        class="inline-flex items-center px-3 text-sm text-gray-900 bg-base-600 border border-r-0 border-gray-300 rounded-l-md dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
+                        class="inline-flex items-center px-3 text-sm text-gray-900 bg-base-600 border border-r-0 border-gray-300 rounded-l-md dark:bg-white dark:text-gray-400 dark:border-none">
                         <HumanIcon />
                     </span>
                     <InputComponent id="username" placeholder="..." type="text" v-model="username" />
@@ -103,7 +103,7 @@ document.title = 'Masuk'
                     class="block mb-2 mt-4 text-sm font-medium text-gray-900 dark:text-white">Password</label>
                 <div class="flex">
                     <span
-                        class="inline-flex items-center px-3 text-sm text-gray-900 bg-base-600 border border-r-0 border-gray-300 rounded-l-md dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
+                        class="inline-flex items-center px-3 text-sm text-gray-900 bg-base-600 border border-r-0 border-gray-300 rounded-l-md dark:bg-white dark:text-gray-400 dark:border-none">
                         <PasswordIcon />
                     </span>
                     <InputComponent id="password" placeholder="*****" type="password" v-model='password' />

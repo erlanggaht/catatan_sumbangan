@@ -72,7 +72,7 @@ document.title = 'Gabung'
     <main class="h-screen">
 
         <form
-            class="artboard bg-dark absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-xl shadow-xl  py-4"
+            class="artboard bg-dark dark:bg-[#242424] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-xl shadow-xl  py-4"
             >
             <h1 class="text-3xl text-center p-4 pb-0 m-0">Hello, Calon Member!</h1>
             <p class="text-center p-0 m-0 font-thin italice text-sm">{{!formNext ? "masukan username dan password. simpan dengan aman ya." : "silahkan masukan data anda. "}}</p>
@@ -83,7 +83,7 @@ document.title = 'Gabung'
                         class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Username</label>
                     <div class="flex">
                         <span
-                            class="inline-flex items-center px-3 text-sm text-gray-900 bg-base-600 border border-r-0 border-gray-300 rounded-l-md dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
+                            class="inline-flex items-center px-3 text-sm text-gray-900 bg-base-600 border border-r-0 border-gray-300 rounded-l-md dark:bg-white dark:text-gray-400 dark:border-none">
                             <HumanIcon />
                         </span>
                         <InputComponent id="username" placeholder="erlanggaht93" type="text" v-model="username" :required='true' :keydown='true' :value="username" />
@@ -93,7 +93,7 @@ document.title = 'Gabung'
                         class="block mb-2 mt-4 text-sm font-medium text-gray-900 dark:text-white">Password</label>
                     <div class="flex">
                         <span
-                            class="inline-flex items-center px-3 text-sm text-gray-900 bg-base-600 border border-r-0 border-gray-300 rounded-l-md dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
+                            class="inline-flex items-center px-3 text-sm text-gray-900 bg-base-600 border border-r-0 border-gray-300 rounded-l-md dark:bg-white dark:text-gray-400 dark:border-none">
                             <PasswordIcon />
                         </span>
                         <InputComponent id="password" placeholder="*****" type="password" v-model="password" :required='true' :value="password"/>

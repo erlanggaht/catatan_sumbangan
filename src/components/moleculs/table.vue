@@ -98,31 +98,40 @@ onMounted(async () => {
   data.value.forEach(element => {
     saldo.push(element.saldo)
   });
-  if (saldo.length === 1) total_saldo.value = rupiah(saldo[0])
-  else saldo.reduce((m, i) => total_saldo.value = rupiah(m + i))
+
+  total_saldo.value = rupiah(saldo.reduce ((acc,current) => {return acc+current})) 
+
+
+
 })
+  
+
+
+
 
 
 </script>
 
 
 <template>
-  <section class="px-3">
+  
+<section class="px-3">
   <div class="my-8 px-9  text-right flex sm:justify-between sm:items-center justify-center items-center">
-    <p class="p-3 text-left">Saldo Saat ini : Rp.{{ total_saldo || '0' }}</p>
-
+    <p class="p-3 text-left">Saldo Saat ini : Rp {{ total_saldo || '0' }}</p>
     <ButtonReload v-if="button_reload" text="REFRESH" />
-    <button @click='reload' class="btn btn-ghost p-2" v-if="!button_reload">
-      <RefreshIcon :class="'w-[24px] h-[24px]'" /> Refresh
+    <button @click='reload' class="btn  p-2  dark:bg-white dark:text-dark" v-if="!button_reload">
+      <RefreshIcon :class="'w-[24px] h-[24px] '" />Refresh 
     </button>
   </div>
 </section>
+
+
 
   <div class="overflow-x-auto sm:p-12">
 
     <table class="table table-sm  " v-if="data.length > 0">
         <thead>
-        <tr class="border-[#f2f2f2]">
+        <tr class="border-[#f2f2f2] dark:text-white">
           <th>No. </th>
           <th>Penulis</th>
           <th>Kode Kas</th>
@@ -164,6 +173,7 @@ onMounted(async () => {
           <th></th>
           <th></th>
           <th></th>
+          <th>{{total_saldo}}</th>
         </tr>
       </tfoot>
     </table>
