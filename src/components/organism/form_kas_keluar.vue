@@ -36,7 +36,20 @@ const username = ref('')
 
 async function Submit_Keluar () {
 
-if(tanggal.value === '')  confirm('tanggal harus di isi')
+    if(tanggal.value === '') {
+        condition_alert.value = {text_alert:"Tanggal harus di isi",condition:false}
+        var audio = new Audio();
+            // no event listener needed here
+            audio.src = audio_error;
+            audio.play();
+            
+        alert.value = true
+        setTimeout(() => {
+            alert.value = false
+        }, 3400)
+
+        return false
+    }
 
 const add_data = await AddData_api(
     username.value,
@@ -52,7 +65,7 @@ const add_data = await AddData_api(
         audio.src = audio_success;
         audio.play();
 
-    condition_alert.value = {text_alert:"data berhasil ditambah. silahkan refresh halaman untuk melihat data baru." ||add_data.data.msg,condition:true}
+    condition_alert.value = {text_alert:"data PENGELUARAN berhasil ditambah. silahkan klik tombol refresh diatas table untuk melihat data baru." ||add_data.data.msg,condition:true}
    
     alert.value = true
     setTimeout(() => {
@@ -72,7 +85,7 @@ const add_data = await AddData_api(
 
 
 onBeforeMount(() => {
-    username.value = parseCookies().lgn
+    username.value = parseCookies().admin
 })
 
 onMounted(async() => {

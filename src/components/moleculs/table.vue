@@ -60,11 +60,11 @@ async function submit_delete(uid, kode) {
       data.value = response_data
       saldo_current.value = response_data[response_data.length - 1].saldo
       let saldo = []
-      data.value.forEach(element => {
-        saldo.push(element.saldo)
-      });
-      if (saldo.length === 1) total_saldo.value = saldo[0]
-      else saldo.reduce((m, i) => total_saldo.value = rupiah(m + i))
+  data.value.forEach(element => {
+    saldo.push(element.saldo)
+  });
+  if (saldo.length === 1) total_saldo.value = rupiah(saldo[0])
+  else saldo.reduce((m, i) => total_saldo.value = rupiah(m + i))
     }).catch((err) => {
       var audio = new Audio();
       // no event listener needed here
@@ -164,7 +164,6 @@ onMounted(async () => {
           <th></th>
           <th></th>
           <th></th>
-          <th>Total : {{ total_saldo }}</th>
         </tr>
       </tfoot>
     </table>

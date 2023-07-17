@@ -3,7 +3,7 @@ import axios from "axios";
 async function Delete_API (uid,kode,password)  {
     
 
-   const response = await axios('http://localhost:4000/delete_data',{
+   const response = await axios('https://catatan-sumbangan-awkr.vercel.app/delete_data',{
         method : 'DELETE',
         data : {
           uid,

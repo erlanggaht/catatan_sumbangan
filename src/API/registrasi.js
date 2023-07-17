@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 async function registrasi_api (username,password,nama_lengkap,alamat,token_organisasi) {
-    const response = await axios('http://localhost:4000/signup',{
+    const response = await axios('https://catatan-sumbangan-awkr.vercel.app/signup',{
         method : "POST",
         data : {
             username,

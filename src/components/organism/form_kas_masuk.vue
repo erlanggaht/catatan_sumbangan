@@ -47,6 +47,8 @@ async function Submit_Masuk () {
         setTimeout(() => {
             alert.value = false
         }, 3400)
+
+        return false
     }
 
     const add_data = await AddData_api(
@@ -63,7 +65,7 @@ async function Submit_Masuk () {
             audio.src = audio_success;
             audio.play();
 
-        condition_alert.value = {text_alert:"data berhasil ditambah. silahkan refresh halaman untuk melihat data baru." ||add_data.data.msg,condition:true}
+        condition_alert.value = {text_alert:"data PEMASUKAN berhasil ditambah. silahkan klik tombol refresh diatas table untuk melihat data baru." ||add_data.data.msg,condition:true}
        
         alert.value = true
         setTimeout(() => {
@@ -82,7 +84,7 @@ async function Submit_Masuk () {
 
 
 onBeforeMount(() => {
-    username.value = parseCookies().lgn
+    username.value = parseCookies().admin
     
 })
 
@@ -148,7 +150,7 @@ onMounted(async() => {
 
          <!-- Alert -->
          <div
-         :class="`${alert ? 'fixed top-0 ssm:top-3 right-0 sm:right-4 transition-all w-full sm:w-1/3 z-50' : 'fixed -bottom-32 w-full sm:w-1/4 right-3 ease-in-out transition-all delay-700'}`">
+         :class="`${alert ? 'fixed top-0 sm:top-3 right-0 sm:right-4 transition-all w-full sm:w-1/3 z-50' : 'fixed -bottom-32 w-full sm:w-1/4 right-3 ease-in-out transition-all delay-700'}`">
          <Alert_success :text_alert="condition_alert.text_alert" v-if="condition_alert.condition" />
          <Alert_warning :text_alert="condition_alert.text_alert" v-if="!condition_alert.condition" />
      </div>

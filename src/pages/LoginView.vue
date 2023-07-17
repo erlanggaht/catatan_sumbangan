@@ -24,8 +24,10 @@ function Submit() {
 
     const response = login_api(username.value, password.value)
     response.then((res) => {
-
+        const refresh_token = res.token.refreshToken
         
+        
+
         var audio = new Audio();
             // no event listener needed here
             audio.src = audio_success;
@@ -43,7 +45,11 @@ function Submit() {
         }, 2700)
 
     // setcook
-        setCookie(null,'lgn',res.user_lg,{
+        setCookie(null,'lgn',refresh_token,{
+            maxAge : 6000000,
+            path : "/"
+        })
+        setCookie(null,'admin',username.value,{
             maxAge : 6000000,
             path : "/"
         })
@@ -55,8 +61,7 @@ function Submit() {
             // no event listener needed here
             audio.src = audio_error;
             audio.play();
-
-        condition_alert.value.text_alert = err.response.data.msg        
+        condition_alert.value.text_alert = err.response?.data.msg   
         alert.value = true
         setTimeout(() => {
             alert.value = false

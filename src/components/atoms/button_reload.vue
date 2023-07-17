@@ -9,7 +9,7 @@ const props = defineProps({
 <template>
 
     <button class="btn">
-        <span class="loading loading-spinner"></span>
+        <span class="loading loading-spinner loading-md"></span>
         {{props.text}}
       </button>
 

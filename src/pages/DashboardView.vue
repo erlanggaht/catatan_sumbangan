@@ -4,14 +4,23 @@ import Table from '@/components/moleculs/table.vue'
 import Button from '@/components/atoms/button.vue';
 import Form_Kas_Masuk from '@/components/organism/form_kas_masuk.vue'
 import Form_Kas_Keluar from '@/components/organism/form_kas_keluar.vue'
-import { onMounted, ref, watchEffect } from 'vue';
+import { onBeforeMount, onMounted, ref, watchEffect } from 'vue';
 import getData from '@/API/get_data.js'
+import {parseCookies} from 'nookies'
+import getAdmin from '@/API/get_data_admin'
+import jwt_decode from "jwt-decode"
+import { useRouter } from 'vue-router';
 
+
+const router = useRouter()
 const condition_add_form = ref('')
 
 let data = ref([])
 const saldo_current = ref()
-
+const login_token = parseCookies().lgn
+const login_active = ref(false)
+const login_username = ref('')
+const login_profile = ref('')
 
 function fn_addForm (condition) {
     if(condition == 'in') condition_add_form.value = 'in'
@@ -20,7 +29,21 @@ function fn_addForm (condition) {
 }
 
 
-   
+onBeforeMount( ()=>{
+
+        //decode token
+        try {
+            const result = jwt_decode(login_token)
+            login_active.value = true
+            login_username.value = result.username
+        } catch (error) {
+            router.replace('/login')
+            console.log(error.message)            
+        }
+      
+       
+        
+})
 
 onMounted(async() => {
     // get data
@@ -28,6 +51,12 @@ onMounted(async() => {
     data.value = response_data
     saldo_current.value = response_data[response_data.length - 1].saldo              
 
+    // Getadmin
+    const response =await getAdmin(login_username.value,login_token)
+    login_profile.value =  response[0]
+
+    // Login On
+    if(!login_active.value) router.replace('/login')
    
 
 })
@@ -38,7 +67,7 @@ document.title = 'Dashboard'
 </script>
 
 <template>
-<Navbar title="Dashboard" link="/dashboard"/>
+<Navbar title="Dashboard" link="/dashboard" :login_profile="login_profile"/>
 <main class="my-12"  >
    
 
