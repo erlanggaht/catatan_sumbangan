@@ -108,17 +108,17 @@ onMounted(async() => {
 
         <div class="input_keterangan sm:text-center">
             <label class="w-[130px] inline-block text-left">Nama</label> 
-        <input type="input" :placeholder='username' class="input input-bordered input-sm w-full max-w-xs" :disabled="true"  />
+        <input type="input" :placeholder='username' class="input input-bordered input-sm w-full max-w-xs bg-[#f2f2f2] disabled:bg-[#f2f2f2]  border-none" :disabled="true"  />
         </div>
 
         <div class="input_keterangan sm:text-center">
         <label class="w-[130px] inline-block text-left">Keterangan</label> 
-        <input type="textarea" placeholder="Keterangan" minlength='1' maxlength="50" class="textarea textarea-bordered input-sm w-full max-w-xs" v-model="keterangan" />
+        <input type="textarea" placeholder="Keterangan" minlength='1' maxlength="50" class="textarea textarea-bordered input-sm w-full max-w-xs bg-[#f2f2f2]" v-model="keterangan" />
         </div>
 
         <div class="input_keterangan sm:text-center">
             <label class="w-[130px] inline-block text-left">Jenis</label> 
-            <select className="select select-bordered w-full max-w-xs"  v-model="jenis">
+            <select className="select select-bordered w-full max-w-xs bg-[#f2f2f2]"  v-model="jenis">
                 <option disabled selected>Jenis Donasi</option>
                 <option>Uang</option>
                 <option>Barang</option>
@@ -126,8 +126,8 @@ onMounted(async() => {
             </div>
         
         <div class="input_Tanggal sm:text-center">
-            <label  class="w-[130px] inline-block text-left">Tanggal</label> 
-            <input type="date" placeholder="Tanggal" class="input input-bordered input-sm w-full max-w-xs" 
+            <label  class="w-[130px] inline-block text-left ">Tanggal</label> 
+            <input type="date" placeholder="Tanggal" class="input input-bordered input-sm w-full max-w-xs bg-[#f2f2f2]" 
             v-model="tanggal" required/>
         </div>
         
@@ -137,20 +137,20 @@ onMounted(async() => {
         </div>
         
         <div class="input_Tanggal sm:text-center">
-            <label class="w-[130px] inline-block text-left">Jumblah Keluar </label> 
+            <label class="w-[130px] inline-block text-left ">Jumblah Keluar </label> 
             <DebouncedCurrencyInput type="text" 
             :options="{
               currency: 'IDR',
               hideCurrencySymbolOnFocus: false,
               hideGroupingSeparatorOnFocus: false,
               hideNegligibleDecimalDigitsOnFocus: false,
-            }" class=" input input-bordered input-sm w-full max-w-xs"  placeholder="Rp."  v-model="pengeluaran"/>
+            }" class=" input input-bordered input-sm w-full max-w-xs bg-[#f2f2f2]"  placeholder="Rp."  v-model="pengeluaran"/>
         </div>
 
       
         <div class="text-right flex justify-end gap-2 mt-8 sm:mt-0 ">
             <button class="btn btn-ghost" @click="fn_addForm(false)">Tutup</button>
-            <button class="btn" @click="Submit_Keluar">Tambah</button>
+            <button class="btn btn-ghost" @click="Submit_Keluar">Tambah</button>
         </div>
 
   <!-- Alert -->

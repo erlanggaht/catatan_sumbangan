@@ -102,8 +102,8 @@ document.title = 'Gabung'
 
                 <div class="text-right py-3 ">
                     <button type="button"  @click.prevent="router.push('/login')"
-                        class="btn border btn-ghost hover:bg-transparent">masuk</button>
-                    <button type="submit" class="btn bg-transparent border-none " @click.prevent="formNext = true">Lanjut &#8594;</button>
+                        class="btn btn-ghost hover:bg-transparent">masuk</button>
+                    <button type="submit" class="btn btn-ghost border-none " @click.prevent="formNext = true">Lanjut &#8594;</button>
                 </div>
             </section>
 
@@ -133,9 +133,9 @@ document.title = 'Gabung'
 
                 <div class="text-right py-3 ">
                     <button type="button" @click.prevent="formNext = false"
-                        class="btn bg-transparent border-none mx-2">&#8592;
+                        class="btn  btn-ghost  border-none mx-2">&#8592;
                     </button>
-                    <button type="submit"  class="btn bg-base-900 "  @click.prevent="Submit()"
+                    <button type="submit"  class="btn btn-ghost bg-base-900 "  @click.prevent="Submit()"
                     >Gabung</button>
                 </div>
             </section>

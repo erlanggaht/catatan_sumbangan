@@ -120,9 +120,9 @@ onMounted(async () => {
 
   <div class="overflow-x-auto sm:p-12">
 
-    <table class="table table-sm " v-if="data.length > 0">
-      <thead>
-        <tr>
+    <table class="table table-sm  " v-if="data.length > 0">
+        <thead>
+        <tr class="border-[#f2f2f2]">
           <th>No. </th>
           <th>Penulis</th>
           <th>Kode Kas</th>
@@ -176,3 +176,12 @@ onMounted(async () => {
     <Alert_success :text_alert="condition_alert.text_alert" v-if="condition_alert.condition" />
   <Alert_warning :text_alert="condition_alert.text_alert" v-if="!condition_alert.condition" />
 </div></template>
+
+
+<style scoped>
+
+tr {
+  border-color:#f2f2f2;
+}
+
+</style>

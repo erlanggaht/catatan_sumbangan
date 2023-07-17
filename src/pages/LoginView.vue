@@ -112,7 +112,7 @@ document.title = 'Masuk'
                 <div class="text-right py-3 ">
                     <button type="button" @click.prevent="router.push('/signup')"
                         class="btn border btn-ghost hover:bg-transparent">gabung</button>
-                    <button type="submit" class="btn bg-base-900" @click.prevent="Submit">masuk</button>
+                    <button type="submit" class="btn bg-base-900 btn-ghost" @click.prevent="Submit">masuk</button>
                 </div>
             </section>
         </form>

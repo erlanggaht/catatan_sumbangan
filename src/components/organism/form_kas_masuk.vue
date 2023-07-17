@@ -104,18 +104,18 @@ onMounted(async() => {
 
         <div class="input_keterangan sm:text-center">
             <label class="w-[130px] inline-block text-left">Nama</label> 
-        <input type="input" :placeholder='username' class="input input-bordered input-sm w-full max-w-xs" :disabled="true"  />
+        <input type="input" :placeholder='username' class="input input-bordered input-sm w-full max-w-xs bg-[#f2f2f2] disabled:bg-[#f2f2f2]  border-none" :disabled="true"  />
         </div>
 
         <div class="input_keterangan sm:text-center">
         <label class="w-[130px] inline-block text-left">Keterangan</label> 
-        <input type="textarea" placeholder="Keterangan" minlength='1' maxlength="50" class="textarea textarea-bordered input-sm w-full max-w-xs" 
+        <input type="textarea" placeholder="Keterangan" minlength='1' maxlength="50" class="textarea bg-[#f2f2f2] textarea-bordered input-sm w-full max-w-xs" 
         v-model="keterangan"/>
         </div>
 
         <div class="input_keterangan sm:text-center">
             <label class="w-[130px] inline-block text-left">Jenis</label> 
-            <select className="select select-bordered w-full max-w-xs" v-model="jenis" >
+            <select className="select select-bordered w-full max-w-xs bg-[#f2f2f2]" v-model="jenis" >
                 <option disabled selected>Jenis Donasi</option>
                 <option>Uang</option>
                 <option>Barang</option>
@@ -124,7 +124,7 @@ onMounted(async() => {
         
         <div class="input_Tanggal sm:text-center">
             <label  class="w-[130px] inline-block text-left">Tanggal</label> 
-            <input type="date" placeholder="Tanggal" class="input input-bordered input-sm w-full max-w-xs" 
+            <input type="date" placeholder="Tanggal" class="input input-bordered bg-[#f2f2f2] input-sm w-full max-w-xs" 
             v-model="tanggal" required/>
         </div>
         
@@ -137,7 +137,7 @@ onMounted(async() => {
               hideCurrencySymbolOnFocus: false,
               hideGroupingSeparatorOnFocus: false,
               hideNegligibleDecimalDigitsOnFocus: false,
-            }" class=" input input-bordered input-sm w-full max-w-xs"  placeholder="Rp." v-model="penerimaan" />
+            }" class=" input input-bordered input-sm w-full max-w-xs bg-[#f2f2f2]"  placeholder="Rp." v-model="penerimaan" />
         </div>
         <div class="input_keterangan absolute top-2 left-2 w-full" >
             <label class=" inline-block text-left text-gray-500">No Kwitansi : {{noKwitansi + 1 || '100'}} </label> 
@@ -145,7 +145,7 @@ onMounted(async() => {
 
         <div class="text-right flex justify-end gap-2 mt-8 sm:mt-0 ">
             <button class="btn btn-ghost" @click="fn_addForm(false)">Tutup</button>
-            <button class="btn" @click="Submit_Masuk">Tambah</button>
+            <button class="btn btn-ghost" @click="Submit_Masuk">Tambah</button>
         </div>
 
          <!-- Alert -->
