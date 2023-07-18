@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { onBeforeMount, onMounted, ref } from 'vue';
 import HumanIcon from '@/assets/icon/HumanIcon.vue'
 import PasswordIcon from '@/assets/icon/PasswordIcon.vue'
 import InputComponent from '@/components/atoms/input.vue'
@@ -9,11 +9,13 @@ import Alert_warning from '@/components/atoms/alert_warning.vue';
 import Alert_success from '@/components/atoms/alert_success.vue';
 import audio_error from '@/assets/error.mp3'
 import audio_success from '@/assets/success.mp3'
-import {setCookie} from 'nookies'
-const router = useRouter()
+import {parseCookies, setCookie} from 'nookies'
+import jwtDecode from 'jwt-decode';
 
+const router = useRouter()
 const username = ref('')
 const password = ref('')
+const login_active = ref(false)
 const alert = ref(false)
 const condition_alert = ref({
     text_alert : '',
@@ -70,12 +72,26 @@ function Submit() {
           
     
 })
-
-
-   
-
-
 }
+
+onBeforeMount(()=>{
+    const login_token = parseCookies().lgn
+
+//decode token
+try {
+    const result = jwtDecode(login_token)
+    login_active.value = true
+} catch (error) {
+    console.log(error.message)            
+}
+
+})
+
+
+onMounted(()=> {
+    if(login_active.value) router.replace('/dashboard')
+})
+
 
 document.title = 'Masuk' 
 </script>

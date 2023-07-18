@@ -119,8 +119,8 @@ onMounted(async () => {
   <div class="my-8 px-9  text-right flex sm:justify-between sm:items-center justify-center items-center">
     <p class="p-3 text-left">Saldo Saat ini : Rp {{ total_saldo || '0' }}</p>
     <ButtonReload v-if="button_reload" text="REFRESH" />
-    <button @click='reload' class="btn  p-2 bg-white hover:bg-gray-100 border-none  dark:bg-white dark:text-dark" v-if="!button_reload">
-      <RefreshIcon :class="'w-[24px] h-[24px] '" />Refresh 
+    <button @click='reload' class="btn  p-2 bg-white hover:bg-gray-100 border-none  dark:bg-white dark:text-black" v-if="!button_reload">
+      <RefreshIcon :class="'w-[24px] h-[24px] '" />Refresh
     </button>
   </div>
 </section>
@@ -128,6 +128,7 @@ onMounted(async () => {
 
 
   <div class="overflow-x-auto sm:p-12">
+    <p v-if="!data">Loading....</p>
 
     <table class="table table-sm  " v-if="data.length > 0">
         <thead>
@@ -144,8 +145,8 @@ onMounted(async () => {
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(m, i) in data" :key="i">
 
+        <tr v-for="(m, i) in data" :key="i">
           <td>{{ i + 1 }}</td>
           <td>{{ m.login_uid }}</td>
           <td>{{ m.kode }}</td>
@@ -156,10 +157,10 @@ onMounted(async () => {
           <td>{{ m.saldo == 0 ? '-' : rupiah(m.saldo) }}</td>
           <td>
             <button class="btn btn-ghost">
-              <EditIcon :class="'w-[24px] h-[24px]'" />
+              <EditIcon :class="'w-[24px] h-[24px] dark:bg-white dark:rounded'" />
             </button>
-            <button class="btn btn-ghost" @click="submit_delete(m.login_uid, m.kode)">
-              <DeleteIcon :class="'w-[24px] h-[24px]'" />
+            <button class="btn btn-ghost " @click="submit_delete(m.login_uid, m.kode)">
+              <DeleteIcon :class="'w-[24px] h-[24px]  dark:bg-white dark:rounded'"  />
             </button>
           </td>
         </tr>
