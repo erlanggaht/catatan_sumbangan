@@ -119,7 +119,7 @@ onMounted(async () => {
   <div class="my-8 px-9  text-right flex sm:justify-between sm:items-center justify-center items-center">
     <p class="p-3 text-left">Saldo Saat ini : Rp {{ total_saldo || '0' }}</p>
     <ButtonReload v-if="button_reload" text="REFRESH" />
-    <button @click='reload' class="btn  p-2  dark:bg-white dark:text-dark" v-if="!button_reload">
+    <button @click='reload' class="btn  p-2 bg-white hover:bg-gray-100 border-none  dark:bg-white dark:text-dark" v-if="!button_reload">
       <RefreshIcon :class="'w-[24px] h-[24px] '" />Refresh 
     </button>
   </div>

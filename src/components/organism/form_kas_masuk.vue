@@ -139,7 +139,7 @@ onMounted(async() => {
               hideNegligibleDecimalDigitsOnFocus: false,
             }" class=" input input-bordered input-sm w-full max-w-xs bg-[#f2f2f2]"  placeholder="Rp." v-model="penerimaan" />
         </div>
-        <div class="input_keterangan absolute top-2 left-2 w-full" >
+        <div class="input_keterangan absolute top-2 left-2  p-2" >
             <label class=" inline-block text-left text-gray-500 dark:text-white">No Kwitansi : {{noKwitansi + 1 || '100'}} </label> 
         </div>
 

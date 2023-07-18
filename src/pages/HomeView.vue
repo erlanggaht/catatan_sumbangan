@@ -67,27 +67,30 @@ function Logout() {
   <header>
     <div class="drawer">
       <input id="my-drawer-3" type="checkbox" class="drawer-toggle" /> 
-      <div class="drawer-content flex flex-col">
+      <div class="drawer-content flex flex-col relative">
         <!-- Navbar -->
           <Navbar title="Catatan Sumbangan" link="/" :login_profile="login_profile"/> 
         <!-- Page content here -->
-        <main class="h-screen grid place-content-center">
+        <main class="h-screen grid place-content-center bg-white dark:bg-[#222] ">
         <h1 class="text-center text-4xl">Selamat Datang</h1>
-        <p class="text-center p-2">silahkan masuk untuk catat pemasukan atau pengeluaran organisasi kami.</p>
-        <Alert_message 
-        :link="login_profile.nama_lengkap ? '/dashboard' : '/signup'"  
-        :text_go="login_profile.nama_lengkap ? 'Dashboard' : 'Gabung' "
-        :title="login_profile.nama_lengkap ? login_profile.nama_lengkap : 'Ayo Gabung' "
-        :desc="login_profile.nama_lengkap ? 'Jujur kunci segalanya.' : 'di organisasi kami' "
-
-        />
+        <p class="text-center p-1">silahkan masuk untuk catat pemasukan atau pengeluaran organisasi kami.</p>
+       
         </main>
+        <div class="alert shadow-lg fixed bottom-1 rounded-none sm:flex hidden justify-between bg-white border-none border-[#f2f2f2] text-[#1f2937] dark:bg-[#242424] dark:text-white">
+          <Alert_message 
+          :link="login_profile.nama_lengkap ? '/dashboard' : '/signup'"  
+          :text_go="login_profile.nama_lengkap ? 'Dashboard' : 'Gabung' "
+          :title="login_profile.nama_lengkap ? login_profile.nama_lengkap : 'Ayo Gabung' "
+          :desc="login_profile.nama_lengkap ? 'Jujur kunci segalanya.' : 'di organisasi kami' "
+  
+          />
+          </div>
       </div> 
 
       <div class="drawer-side">
         
         <label for="my-drawer-3" class="drawer-overlay"></label> 
-        <ul class="menu p-4 w-80 h-full bg-base-200">
+        <ul class="menu p-4 w-80 h-full bg-white dark:bg-[#222]">
           <!-- Sidebar content here -->
           <li>
             <router-link :to="'/dashboard'" v-if="login_profile?.nama_lengkap">Hello, {{login_profile.nama_lengkap}}</router-link> 

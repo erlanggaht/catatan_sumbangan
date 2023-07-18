@@ -74,14 +74,14 @@ document.title = 'Dashboard'
 
     <Table/>
 
-    <section class="flex items-center gap-3 sm:px-12 my-12 sm:my-12 justify-center sm:justify-end py-3">
+    <section class="flex items-center gap-3 sm:px-12  justify-center sm:justify-end py-3">
         <div class="flex items-center gap-2  flex-wrap-reverse justify-center ">
             <Button text="Tambah Kas Masuk"  bg="btn-info text-white" @click="fn_addForm('in')" />
             <Button text="Tambah Kas Keluar" bg="btn-error text-white" @click="fn_addForm('out')"/>
         </div>
     </section>
 
-    <section class="form_add flex flex-col gap-4 mx-6 p-5 mt-16 mb-10 shadow border dark:border-none dark:bg-[#242424] rounded-sm relative" v-if="condition_add_form">
+    <section class="form_add bg-white flex flex-col gap-4 px-12 py-12 mb-10 border-none  dark:border-none dark:bg-[#242424] rounded-sm relative" v-if="condition_add_form">
         <Form_Kas_Masuk v-if="condition_add_form == 'in' " :fn_addForm="fn_addForm" :data="data" :saldo_current="saldo_current" />
         <Form_Kas_Keluar v-if="condition_add_form == 'out'" :fn_addForm="fn_addForm" :data="data" :saldo_current="saldo_current"/>
     </section>
