@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 async function login_api (username,password) {
-    const response = await axios('https://catatan-sumbangan-awkr.vercel.app/login',{
+    const response = await axios(import.meta.env.VITE_ENDPOINT+'login',{
         method : "POST",
         data : {
             username,

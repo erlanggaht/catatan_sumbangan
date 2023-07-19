@@ -3,7 +3,7 @@ import HomeView from '@/pages/HomeView.vue'
 import LoginView from '@/pages/LoginView.vue'
 import SignupView from '@/pages/SignupView.vue'
 import Dashboard from '@/pages/DashboardView.vue'
-
+import Dashboard_UIDView from '@/pages/Dashboard_UIDView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -35,7 +35,15 @@ const router = createRouter({
       name : "dashboard",
       component : Dashboard,
       meta : {
-        title : 'Gabung'
+        title : 'Dashboard'
+      }
+    },
+    {
+      path : "/dashboard/:uid",
+      name : "data_uid",
+      component : Dashboard_UIDView,
+      meta : {
+        title : 'Data_uid'
       }
     }
   ]

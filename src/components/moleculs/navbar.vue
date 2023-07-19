@@ -20,6 +20,7 @@ function Logout() {
   logout.value = true
   setTimeout(() => {
     destroyCookie(null,'lgn')
+    localStorage.clear()
     router.replace('/login')
   },2600)
 

@@ -10,7 +10,7 @@ import {parseCookies} from 'nookies'
 import getAdmin from '@/API/get_data_admin'
 import jwt_decode from "jwt-decode"
 import { useRouter } from 'vue-router';
-
+import FileTree from '../components/organism/filte_tree.vue';
 
 const router = useRouter()
 const condition_add_form = ref('')
@@ -70,11 +70,11 @@ document.title = 'Dashboard'
 <Navbar title="Dashboard" link="/dashboard" :login_profile="login_profile"/>
 <main class="my-12"  >
    
-    
+  <section class="w-full flex justify-center shadow pb-12">  <FileTree/> </section>
 
     <Table/>
 
-    <section class="flex items-center gap-3 sm:px-12  justify-center sm:justify-end py-3">
+    <section class="flex items-center gap-3 sm:px-12  justify-center sm:justify-end py-3 bg-white dark:bg-[#222]">
         <div class="flex items-center gap-2  flex-wrap-reverse justify-center ">
             <Button text="Tambah Kas Masuk"  bg="btn-info text-white" @click="fn_addForm('in')" />
             <Button text="Tambah Kas Keluar" bg="btn-error text-white" @click="fn_addForm('out')"/>

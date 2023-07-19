@@ -34,6 +34,7 @@ async function reload() {
     data.value = response_data
     saldo_current.value = response_data[response_data.length - 1].saldo
     button_reload.value = false
+    total_saldo.value = rupiah(saldo.reduce ((acc,current) => {return acc+current})) 
   }, 1000)
 }
 
@@ -116,7 +117,7 @@ onMounted(async () => {
 <template>
   
 <section class="px-3">
-  <div class="my-8 px-9  text-right flex sm:justify-between sm:items-center justify-center items-center">
+  <div class="mt-8 px-9  text-right flex sm:justify-between sm:items-center justify-center items-center">
     <p class="p-3 text-left">Saldo Saat ini : Rp {{ total_saldo || '0' }}</p>
     <ButtonReload v-if="button_reload" text="REFRESH" />
     <button @click='reload' class="btn  p-2 bg-white hover:bg-gray-100 border-none  dark:bg-white dark:text-black" v-if="!button_reload">
@@ -127,7 +128,7 @@ onMounted(async () => {
 
 
 
-  <div class="overflow-x-auto sm:p-12">
+  <div class="overflow-x-auto sm:p-12 bg-white dark:bg-[#222]">
     <p v-if="!data">Loading....</p>
 
     <table class="table table-sm  " v-if="data.length > 0">

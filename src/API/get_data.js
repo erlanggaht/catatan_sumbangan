@@ -1,7 +1,7 @@
 import axios from "axios";
 
 async function getData () {
-    const response = await axios('https://catatan-sumbangan-awkr.vercel.app/getdata')
+    const response = await axios(import.meta.env.VITE_ENDPOINT+'getdata')
 
     return response.data
 }

@@ -118,7 +118,7 @@ onMounted(async() => {
 
         <div class="input_keterangan sm:text-center">
             <label class="w-[130px] inline-block text-left">Jenis</label> 
-            <select className="select select-bordered w-full max-w-xs bg-[#f2f2f2]"  v-model="jenis">
+            <select className="select select-bordered w-full max-w-xs bg-[#f2f2f2] text-[#222]"  v-model="jenis">
                 <option disabled selected>Jenis Donasi</option>
                 <option>Uang</option>
                 <option>Barang</option>
@@ -161,3 +161,12 @@ onMounted(async() => {
 </div>
 
 </template>
+
+
+<style scoped>
+input,textarea {
+    background-color: #fff !important;
+    color: #222 !important;
+}
+
+</style>

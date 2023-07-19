@@ -104,18 +104,18 @@ onMounted(async() => {
 
         <div class="input_keterangan sm:text-center">
             <label class="w-[130px] inline-block text-left">Nama</label> 
-        <input type="input" :placeholder='username' class="input input-bordered input-sm w-full max-w-xs bg-[#f2f2f2] disabled:bg-[#f2f2f2]  border-none" :disabled="true"  />
+        <input type="input" :placeholder='username' class="input input-bordered input-sm w-full max-w-xs bg-[#f2f2f2] disabled:bg-[#f2f2f2]  border-none dark:text-[#222] disabled:text-[#444]" :disabled="true"  />
         </div>
 
         <div class="input_keterangan sm:text-center">
         <label class="w-[130px] inline-block text-left">Keterangan</label> 
-        <input type="textarea" placeholder="Keterangan" minlength='1' maxlength="50" class="textarea bg-[#f2f2f2] textarea-bordered input-sm w-full max-w-xs" 
+        <input type="textarea" placeholder="Keterangan" minlength='1' maxlength="50" class="textarea bg-[#f2f2f2] textarea-bordered input-sm w-full max-w-xs " 
         v-model="keterangan"/>
         </div>
 
         <div class="input_keterangan sm:text-center">
             <label class="w-[130px] inline-block text-left">Jenis</label> 
-            <select className="select select-bordered w-full max-w-xs bg-[#f2f2f2]" v-model="jenis" >
+            <select className="select select-bordered w-full max-w-xs bg-[#f2f2f2] text-[#222]" v-model="jenis" >
                 <option disabled selected>Jenis Donasi</option>
                 <option>Uang</option>
                 <option>Barang</option>
@@ -157,3 +157,13 @@ onMounted(async() => {
 
     
 </template>
+
+
+<style scoped>
+
+input,textarea {
+    background-color: #fff !important;
+    color: #222 !important;
+}
+
+</style>

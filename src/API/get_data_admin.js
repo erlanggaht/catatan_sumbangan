@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 async function getAdmin (username,token) {
-       const response = await axios('https://catatan-sumbangan-awkr.vercel.app/get_admin',{
+       const response = await axios(import.meta.env.VITE_ENDPOINT+'get_admin',{
               method : "POST",
               data : {
                      username : username,
