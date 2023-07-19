@@ -49,7 +49,7 @@ onMounted(async() => {
 
 <template>
 <h1 class="text-center text-2xl  pt-2">{{nama_lengkap}}</h1>
-<p class="text-center pb-12">{{this.$route.params.uid && ''}}</p>
+<p class="text-center pb-12">{{route.params.uid && ''}}</p>
 <div class="overflow-x-auto sm:p-12 bg-white dark:bg-[#222]" v-if="data.length > 0 ">
         <table class="table table-sm">
           <thead>
